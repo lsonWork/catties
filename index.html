@@ -4,21 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catty convert</title>
+    <title>theCloset tools</title>
 </head>
 
 <body>
     <div>
-        <label for="">Catty: </label>
-        <input type="number">
-        <input type="button" value="Convert">
-    </div>
-    <div style="margin-top: 20px;">
         <div>
-            <label for="">Result: </label>
-            <span id="result" style="font-size: x-large;"></span>
+            <label for="">Catty: </label>
+            <input type="number" id="inputCatties">
+            <input type="button" value="Convert" id="btnConvert">
         </div>
-        <button style="padding: 8px 20px;" id="copyBtn">Copy</button>
+        <div style="margin-top: 20px;">
+            <div>
+                <label for="">Result: </label>
+                <span id="result" style="font-size: x-large;"></span>
+            </div>
+            <button style="padding: 8px 20px;" id="copyBtn">Copy</button>
+        </div>
+    </div>
+    <div
+        style="margin-top: 40px; margin-bottom: 40px; height: 10px; background-color: rgb(27, 124, 76); border-radius: 15px;">
+    </div>
+    <div>
+        <div>
+            <label for="">Giá nhập (NDT): </label>
+            <input type="number" id="inputNDT">
+            <input type="button" value="Convert" id="btnCalculate">
+        </div>
+        <div style="margin-top: 20px;">
+            <div>
+                <label for="">Giá nhập chưa tính vận chuyển (VND): </label>
+                <span id="resultVND" style="font-size: x-large;"></span>
+            </div>
+            <div>
+                <label for="">Giá bán lẻ (VND): </label>
+                <span id="resultRetail" style="font-size: x-large;"></span>
+            </div>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
