@@ -30,16 +30,20 @@ copyBtn.addEventListener("click", () => {
 const btnCalculate = document.querySelector("#btnCalculate");
 const inputNDT = document.querySelector("#inputNDT");
 const resultVND = document.querySelector("#resultVND");
+const resultVNDAndShip = document.querySelector("#resultVNDAndShip");
 const resultRetail = document.querySelector("#resultRetail");
+const resulBase = document.querySelector("#resultBase");
 
 const calculateNDT = () => {
   const res = Math.ceil(Number(inputNDT.value) * 3.7);
   resultVND.textContent = res;
-  const resRetail = Math.ceil(
-    Number(inputNDT.value) * 3.7 + 15 + 5 + (res / 100) * 20
-  );
+  const resShip = Math.ceil(Number(inputNDT.value) * 3.7) + 15;
+  resultVNDAndShip.textContent = resShip;
+  const resBase = Math.ceil(Number((resShip / 100) * 30));
+  resulBase.textContent = resBase;
+  const resRetail = Math.ceil(resShip + 5 + resBase);
   let final = 0;
-  if (res <= 200) {
+  if (resShip <= 200) {
     final = resRetail + 30;
   } else {
     final = resRetail + (resRetail / 100) * 15;
