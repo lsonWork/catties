@@ -51,21 +51,15 @@ const calculateNDT = () => {
 
   const mktValue = Math.ceil((Number(shipMaterialValue) / 100) * 15);
   mkt.textContent = mktValue;
-  // retail.textContent =
-  //   (Math.ceil(Number(inputNDT.value) * 3.7) +
-  //     15 +
-  //     5 +
-  //     estInterest +
-  //     Math.ceil((Number(shipMaterialValue) / 100) * 15)) /
-  //   (1 - 0.3);
 
-  retail.textContent =
+  retail.textContent = Math.ceil(
     (Math.ceil(Number(inputNDT.value) * 3.7) +
       15 +
       5 +
       estInterest +
       mktValue) /
-    (1 - 0.3);
+      (1 - 0.3)
+  );
 };
 
 window.addEventListener("keydown", (e) => {
