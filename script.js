@@ -33,7 +33,8 @@ const noship = document.querySelector("#noship");
 const shipMaterial = document.querySelector("#shipMaterial");
 const interest = document.querySelector("#interest");
 const rose = document.querySelector("#rose");
-const retail = document.querySelector("#retail");
+const retailHappy = document.querySelector("#retailHappy");
+const retailWorst = document.querySelector("#retailWorst");
 const mkt = document.querySelector("#mkt");
 
 const calculateNDT = () => {
@@ -52,12 +53,17 @@ const calculateNDT = () => {
   const mktValue = Math.ceil((Number(shipMaterialValue) / 100) * 15);
   mkt.textContent = mktValue;
 
-  retail.textContent = Math.ceil(
+  retailHappy.textContent = Math.ceil(
     (Math.ceil(Number(inputNDT.value) * 3.7) +
       15 +
       5 +
       estInterest +
       mktValue) /
+      (1 - 0.3)
+  );
+
+  retailWorst.textContent = Math.ceil(
+    (Math.ceil(Number(inputNDT.value) * 3.7) + 15 + 5 + 40 + mktValue) /
       (1 - 0.3)
   );
 };
